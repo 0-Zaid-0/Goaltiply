@@ -100,6 +100,7 @@ class CreateSessionResponse(BaseModel):
 
 class IngestRequest(BaseModel):
     csv_text: str | None = None
+    ask_demo: bool = False
 
 
 class IngestResponse(BaseModel):

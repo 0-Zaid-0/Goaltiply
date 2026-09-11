@@ -12,3 +12,4 @@ storage/
 *.xlsx
 .DS_Store
 web/.turbo/
+.gh-config/

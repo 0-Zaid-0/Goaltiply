@@ -25,30 +25,28 @@ const BEATS = [
 
 export default function FallbackPage() {
   return (
-    <main>
-      <div className="wrap">
-        <header className="nav">
-          <Link className="mark" href="/">
-            <strong>MultiPly</strong>
-            <span>Stage fallback</span>
-          </Link>
-          <Link className="btn btn-primary" href="/app">
-            Try live demo
+    <main className="min-h-screen bg-[var(--bg)] px-6 py-10 text-[var(--text)]">
+      <div className="mx-auto max-w-2xl">
+        <header className="mb-8 flex items-baseline justify-between">
+          <div>
+            <p className="font-[family-name:var(--font-display)] text-2xl italic">MultiPly</p>
+            <p className="text-xs text-[var(--text-dim)]">Stage fallback — live demo is down</p>
+          </div>
+          <Link href="/" className="text-xs text-[var(--gold)] hover:underline">
+            Back to app
           </Link>
         </header>
-        <p className="lede" style={{ maxWidth: "62ch", marginBottom: 28 }}>
-          Use this if wifi, Gemini, or the API die on stage. Same demo persona:
-          24, Austin, $50k, roommate rent $1,050, target $1,450, invest $200.
-          Educational, not advice.
-        </p>
-        {BEATS.map((beat) => (
-          <article key={beat.q} className="panel" style={{ marginBottom: 14 }}>
-            <p className="quote">{beat.q}</p>
-            <p className="lede" style={{ fontSize: 15, margin: 0 }}>
-              {beat.a}
-            </p>
-          </article>
-        ))}
+        <div className="space-y-4">
+          {BEATS.map((beat) => (
+            <article
+              key={beat.q}
+              className="rounded-2xl border border-[var(--border)] bg-[var(--bg-raised)] p-5"
+            >
+              <h2 className="text-sm text-[var(--gold)]">{beat.q}</h2>
+              <p className="mt-2 text-sm text-[var(--text-dim)]">{beat.a}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </main>
   );

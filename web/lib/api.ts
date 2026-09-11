@@ -35,10 +35,10 @@ export function putProfile(id: string, profile: Profile) {
   });
 }
 
-export function ingest(id: string) {
+export function ingest(id: string, ask_demo = false) {
   return request<{ txn_count: number; ingest_status: string }>(`/v1/sessions/${id}/ingest`, {
     method: "POST",
-    body: JSON.stringify({}),
+    body: JSON.stringify({ ask_demo }),
   });
 }
 

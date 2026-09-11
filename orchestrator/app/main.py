@@ -97,9 +97,9 @@ def put_profile(session_id: str, profile: Profile) -> SessionResponse:
 
 
 @app.post("/v1/sessions/{session_id}/ingest", response_model=IngestResponse)
-def ingest(session_id: str, _body: IngestRequest = IngestRequest()) -> IngestResponse:
+def ingest(session_id: str, body: IngestRequest = IngestRequest()) -> IngestResponse:
     try:
-        return orch.ingest(session_id, ask_demo=True)
+        return orch.ingest(session_id, ask_demo=body.ask_demo)
     except KeyError as exc:
         raise HTTPException(status_code=404, detail="session not found") from exc
 

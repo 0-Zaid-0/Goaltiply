@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MultiPly — financial copilot",
+  title: "MultiPly — your financial copilot",
   description:
-    "An AI copilot that turns bank activity into a budget workbook and answers whether you can afford the next move.",
+    "Real-time, automated financial guidance for young adults. Connect your accounts, ask real questions, get real answers.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>{children}</body>
