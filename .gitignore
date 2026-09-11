@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.env
+storage/
+*.xlsx
+.DS_Store
+web/.turbo/
